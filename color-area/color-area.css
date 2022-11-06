@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 2rem;
+}
+
+div {
+  color: aliceblue;
+}
+
+.container {
+  display: grid;
+
+  /* 用相对单位，尝试随意缩放窗口大小 */
+  width: 100vw;
+  height: 100vh;
+
+  /* 第一个参数是分成几个单元格，第二个参数表示前一个是后一个的几倍，设置为1就是平分 */
+  grid-template-rows: 5 1fr;
+  grid-template-columns: 5 1fr;
+
+  /* 设置间隙 */
+  column-gap: 10px;
+  row-gap: 10px;
+
+  grid-template-areas:
+    /* g和s为合并的单元格 */
+    'a b c d e'
+    'f g g i j'
+    'k g g s s'
+    'p q r s s'
+    'u v w . .';
+}
+
+.container > div {
+  /* 设置数字的左边距 */
+  padding-left: 0.5rem;
+}
+
+.white {
+  background-color: aliceblue;
+}
+
+.red {
+  /* 要指明单元格的名字 */
+  grid-area: g;
+  background-color: red;
+  /* grid-row: 3/6;
+  grid-column: 3/6; */
+  /* width: 610px;
+  height: 300px; */
+}
+
+.darkred_1 {
+  background-color: darkred;
+}
+
+.aqua_2 {
+  /* grid-row: 1/2;
+  grid-column: 3/4; */
+  background-color: aqua;
+}
+
+.burlywood_3 {
+  /* grid-row: 1/2;
+  grid-column: 5/6; */
+  background-color: burlywood;
+}
+
+.blueviolet_4 {
+  /* grid-row: 1/2;
+  grid-column: 7/8; */
+  background-color: blueviolet;
+}
+
+.cornflowerblue_5 {
+  /* grid-row: 1/2;
+  grid-column: 9/10; */
+  background-color: cornflowerblue;
+}
+
+.darkblue_6 {
+  /* grid-row: 3/4;
+  grid-column: 1/2; */
+  background-color: darkblue;
+}
+
+.chartreuse_8 {
+  /* grid-row: 3/4;
+  grid-column: 7/8; */
+  background-color: chartreuse;
+}
+
+.darkblue_10 {
+  /* grid-row: 3/4;
+  grid-column: 9/10; */
+  background-color: darkblue;
+}
+
+.aqua_11 {
+  /* grid-row: 5/6;
+  grid-column: 1/2; */
+  background-color: aqua;
+}
+
+.darkred_9 {
+  /* 要指明单元格的名字 */
+  grid-area: s;
+  background-color: darkred;
+  /* grid-row: 5/8;
+  grid-column: 7/10; */
+  /* width: 610px;
+  height: 300px; */
+}
+
+.burlywood_12 {
+  /* grid-row: 7/8;
+  grid-column: 1/2; */
+  background-color: burlywood;
+}
+
+.cornflowerblue_13 {
+  /* grid-row: 7/8;
+  grid-column: 3/4; */
+  background-color: cornflowerblue;
+}
+
+.coral_14 {
+  /* grid-row: 7/8;
+  grid-column: 5/6; */
+  background-color: coral;
+}
+
+.chartreuse_15 {
+  /* grid-row: 9/10;
+  grid-column: 1/2; */
+  background-color: chartreuse;
+}
+
+.darkolivegreen_16 {
+  /* grid-row: 9/10;
+  grid-column: 3/4; */
+  background-color: darkolivegreen;
+}
+
+.blueviolet_17 {
+  /* grid-row: 9/10;
+  grid-column: 5/6; */
+  background-color: blueviolet;
+}
+
+.coral_18 {
+  /* grid-row: 9/10;
+  grid-column: 7/8; */
+  background-color: coral;
+}
