@@ -166,8 +166,8 @@ a:hover{
     background-image: none;
     width:63px;
 }
-.line4{
-    
+.line4:hover{
+    color:grey;
 }
 .box10{
     display: flex;
