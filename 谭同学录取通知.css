@@ -1,0 +1,104 @@
+
+.flex{
+    display: flex;
+    height: 60px;
+    border: 0px;
+    margin: 0px;
+    justify-content: center;
+}
+/* .blankbox{
+    width: 700px;
+    height: 70px;
+} */
+.titlebox{
+    width: 400px;
+    height: 60px;
+    background-color: grey;
+}
+.titlebox>h3{
+    color: aliceblue;
+    text-align: center;
+}
+.body{
+    display: flex;
+    
+    height: 250px;
+    justify-content: center;
+    
+    
+}
+.images{
+    /* background-image: url(蓝山.png); */
+    width: 400px;
+    height: 250px;
+    text-align: center;
+    padding: 50px;
+    /* background-repeat: no-repeat;
+    background-position: center center; */
+
+    /* align-self: center; */
+}
+.bodydown{
+    
+    display: flex;
+    
+    height: 350px;
+    justify-content: center;
+}
+.wenzi{
+    border-style: solid;
+    border-width: 1px;
+    width: 400px;
+    height: 370px;
+    /* background-color: ; */
+    justify-content: center;
+}
+.strong{
+    color: aqua;
+    font-size: 20px;
+    font-weight: 700;
+}
+.blue{
+    color: aqua;
+}
+.numimg{
+    /* background-image: url(蓝山群号.png); */
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    /* background-repeat: no-repeat;
+    background-position: center center; */
+}
+.numingbox{
+    width: 200px;
+    margin: 0 auto;
+    height: 20px;
+    padding: 10px;
+    background-color: rgb(165, 161, 161);
+}
+.xiaoxi{
+    width: 400px;
+    height: 40px;
+    color: red;
+    text-align: center;
+}
+
+.down{
+    display: flex;
+    
+    height: 50px;
+    justify-content: center;
+}
+.greydown{
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    
+}
+.greydown_box{
+    width: 400px;
+    height: 100px;
+    background-color: grey;
+    color: aliceblue;
+    text-align: center;
+}
