@@ -30,7 +30,7 @@
 .images{
     /* background-image: url(蓝山.png); */
     width: 400px;
-    height: 250px;
+    
     text-align: center;
     padding: 50px;
     /* background-repeat: no-repeat;
@@ -42,16 +42,47 @@
     
     display: flex;
     
-    height: 350px;
+    
     justify-content: center;
 }
 .wenzi{
     border-style: solid;
     border-width: 1px;
-    width: 400px;
-    height: 370px;
+    width: 380px;
+    padding: 10px;
+    margin: 0;
+    border-left-color: grey;
+    border-top-color: grey;
+    border-right-color: grey;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 5px 0 0 2px #dcdcdc;
+    
     /* background-color: ; */
     justify-content: center;
+}
+.wenzibottom{
+    display: flex;
+    
+    
+    /* height: 350px; */
+    justify-content: center;
+}
+.wenzidown{
+    border-style: solid;
+    padding: 10px;
+    margin: 0;
+    border-top-width: 0px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    width: 380px;
+    border-left-color: grey;
+    border-bottom-color: grey;
+    border-right-color: grey;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 5px 5px 0 2px #dcdcdc;
 }
 .strong{
     color: aqua;
@@ -64,7 +95,7 @@
 .numimg{
     /* background-image: url(蓝山群号.png); */
     width: 400px;
-    height: 40px;
+    
     text-align: center;
     /* background-repeat: no-repeat;
     background-position: center center; */
@@ -74,19 +105,20 @@
     margin: 0 auto;
     height: 20px;
     padding: 10px;
-    background-color: rgb(165, 161, 161);
+    background-color: rgb(242, 245, 250);
 }
 .xiaoxi{
-    width: 400px;
-    height: 40px;
+    width: 380px;
+    
     color: red;
+   margin: 20px 40px;
     text-align: center;
 }
 
 .down{
     display: flex;
     
-    height: 50px;
+   
     justify-content: center;
 }
 .greydown{
