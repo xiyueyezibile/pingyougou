@@ -1,0 +1,45 @@
+/* 清除内外边距 */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 文字不倾斜 */
+em,i
+{
+    font-size: normal;
+}
+/* 去掉li的小圆点 */
+li
+{
+    list-style: none;
+}
+
+img
+{
+    border: 0;
+    /* 取消图片底部空白缝隙问题 */
+    vertical-align: middle;
+}
+
+button
+{
+    /* 鼠标经过button，变为小手 */
+    cursor:pointer;
+}
+
+a
+{
+    color: #666;
+    /* 取消下划线 */
+    text-decoration: none;
+}
+
+button,input
+{
+    border: 0;
+    outline: none;
+    
+
+}
