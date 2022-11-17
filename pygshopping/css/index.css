@@ -1,0 +1,268 @@
+/* 首页制作 */
+.main
+{
+    margin-top: 10px;
+    display: flex;
+    width: 980px;
+    height: 455px;
+    
+    margin-left: 220px;
+    justify-content: space-between;
+}
+/* 焦点图模块 */
+.focus
+{
+    width: 721px;
+    height: 100%;
+    
+}
+/* 快报模块 */
+.newsflash
+{
+    width: 250px;
+    height: 100%;
+    
+}
+/* 快报>新闻模块 */
+.news
+{
+    border: 1px solid #e4e4e4;
+    height: 165px;
+}
+
+
+.news-head
+{
+    display: flex;
+    height: 33px;
+    border-bottom: 1px dotted #e4e4e4;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.news-head div:nth-child(1)
+{
+    font-size: 14px;
+    
+
+}
+.news-head div:nth-child(2) a
+{
+    font-size: 12px;
+
+}
+.news-head div:nth-child(2) a:hover
+{
+    color: rgb(211, 90, 35);
+}
+.news-foot
+{
+    padding: 5px 15px 0;
+}
+.news-foot ul li
+{
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+}
+.news-foot ul li a:hover
+{
+    color: #c81623;
+}
+/* 快报>生活服务模块 */
+.lifeservice
+{
+    margin-top: 5px;
+    height: 209px;
+}
+.lifeservice
+{
+    /* 调整位置 */
+    margin-top: -1px;
+    border: 1px solid #e4e4e4;
+    overflow: hidden;
+}
+.lifeservice ul
+{
+    display: flex;
+    width: 252px;
+    height: 100%;
+    flex-wrap: wrap;
+}
+.lifeservice ul li
+{
+    width: 63px;
+    height: 71px;
+    border-bottom:1px solid #e4e4e4 ;
+    border-right: 1px solid #e4e4e4;
+    font-size: 12px;
+    text-align: center;
+}
+.lifeservice ul li div
+{
+    width: 40px;
+    
+    margin: 10px auto 5px;
+    
+}
+
+/* 推荐模块制作 */
+.recommend
+{
+    display: flex;
+    height: 163px;
+    background-color: #ebebeb;
+    margin-top: 12px;
+}
+/* 推荐模块左侧 */
+.recom-left
+{
+    background-color: #5c5251;
+    width: 205px;
+    height: 100%;
+    text-align: center;
+    padding-top: 30px;
+}
+/* 推荐模块右侧 */
+.recom-right
+{
+    /* 加flex放一排 */
+    display: flex;
+}
+.recom-right ul
+{
+    /* 加flex放一排 */
+    display: flex;
+    
+}
+
+.recom-right ul li
+{
+    /* 子绝父相 */
+    position: relative;
+}
+.recom-right ul li img
+{
+    width: 100%;
+    height: 100%;
+}
+.recom-right ul li:nth-child(-n + 3)::after
+{
+    right: 0;
+    top: 10px;
+    position: absolute;
+    content: ' ';
+    width: 1px;
+    height: 145px;
+    background-color: #ddd;
+}
+
+/* 楼层制作 */
+/* 楼层>头部制作 */
+.box-head
+{
+    margin-top: 30px;
+    display: flex;
+    
+    height: 30px;
+    border-bottom: 2px solid #c81623;
+    justify-content: space-between;
+}
+.box-head-left
+{
+    font-size: 18px;
+    color: #c81623;
+}
+.box-head-right ul
+{
+    /* 加flex使li成一排 */
+    display: flex;
+    line-height: 30px;
+    font-size: 12px;
+}
+.box-head-right ul li:nth-child(2n)
+{
+    /* 调整间距 */
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 2px;
+    
+}
+
+.box-head-right ul li:first-child a
+{
+    /* 第一个链接成红色 */
+    color: #c81623;
+}
+.box-head-right ul li a:hover
+{
+    color: #c81623;
+}
+
+/* 楼层>身体制作 */
+.box-foot
+{
+    display: flex;
+    height: 361px;
+}
+
+.box-foot div:nth-child(1)
+{
+    width: 210px;
+    background-color: rgb(249, 249, 249);
+}
+.box-foot div:nth-child(2)
+{
+    width: 329px;
+    
+}
+.box-foot div:nth-child(3)
+{
+    width: 221px;
+    display: flex;
+    flex-wrap: wrap;
+    border-right: 1px solid #ccc;
+}
+.box-foot div:nth-child(4)
+{
+    width: 221px;
+    border-right: 1px solid #ccc;
+}
+.box-foot div:nth-child(5)
+{
+    display: flex;
+    flex-wrap: wrap;
+    width: 219px;
+}
+.box-foot div:nth-child(1) ul
+{
+    display: flex;
+    width: 100%;
+    height: 102px;
+    flex-wrap: wrap;
+    
+    padding-left: 10px;
+}
+.box-foot div:nth-child(1) ul li
+{
+    margin-right: 6px;
+    width: 85px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 34px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+.box-foot div:nth-child(1) ul li a:hover
+{
+    color: #c81623;
+}
+
+.box-foot div:nth-child(3) a:first-child
+{
+    border-bottom: 1px solid #ccc;
+}
+.box-foot div:nth-child(5) a:first-child
+{
+    border-bottom: 1px solid #ccc;
+}
