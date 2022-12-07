@@ -1,0 +1,25 @@
+{
+    "gitlens.proxy": {
+    
+    },
+    // 左侧目录不折叠
+  "explorer.compactFolders": false,
+  // 选择格式化工具
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // prettier格式化配置
+  "prettier": {
+    // 句尾添加分号
+    "semi": false,
+    // 缩进字节数
+    "tabWidth": 2,
+    // 超过最大值换行
+    "printWidth": 500,
+    // 使用单引号代替双引号
+    "singleQuote": true
+  }
+}

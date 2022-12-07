@@ -25,9 +25,10 @@
     font-size: 6px;
     
 }
-/* 光标位于其上颜色 */
+
 .shortcut a:hover
 {
+    /* 光标位于其上颜色 */
     color: rgb(211, 90, 35);
 }
 .shortcut div

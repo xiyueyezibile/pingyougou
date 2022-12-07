@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+button{
+    /* 鼠标经过button，变为小手 */
+    cursor:pointer;
+    background-color: red;
+}
+button{
+    border: 0;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    font-size: 30px;
+    line-height: 30px;
+    border-radius:  0 10px 10px 0;
+
+}
+textarea{
+    outline: none;
+    line-height: 30px;
+    overflow: hidden;
+    border: 0;
+    height: 100%;
+    font-size: 20px;
+    resize: none;
+    border-radius: 10px 0 0 10px;
+}
+textarea:focus{
+    border: 1px solid black;
+}
+a{
+    color: #666;
+    /* 取消下划线 */
+    text-decoration: none;
+}
+section{
+    
+    width: 500px;
+    
+    
+    margin: 0 auto;
+}
+.w{
+    width: 300px;
+    height: 125px;
+    margin: 0 auto;
+    padding-top: 100px;
+    
+    
+}
+header{
+    background-color: pink;
+    border-radius:  25px 25px 0  0;
+    height: 250px;
+}
+header div{
+    
+    left:50px;
+    top:50px;
+}
+
+.w div:first-child{
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+}
+.w div:last-child{
+    display: flex;
+}
+
+
+footer{
+    
+    width: 100%;
+}
+ul{
+    
+    width: 100%;
+    
+}
+ul li{
+    display: flex;
+    text-indent: 1em;
+    justify-content: space-between;
+}
+
+.down{
+    
+    background-color: grey;
+}
+
+.strong{
+    
+    text-decoration: line-through;
+}
+
+.sstrong{
+    text-decoration: line-through;
+}
