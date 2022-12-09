@@ -27,37 +27,67 @@ const div = document.querySelectorAll('div')
 //   }
 // }, 30)
 
-function m() {
-  div[0].style.left = div[0].offsetLeft + 1 + 'px'
+//Promise写法
+let t = 30
+
+function rgb1() {
+  return new Promise((resolve, reject) => {
+    setTimeout(r1, t)
+    resolve()
+  })
 }
-
-let p = new Promise((resolve) => {
-  let r = setInterval(m, 30)
-  resolve('成功')
-})
+function r1() {
+  div[0].style.left = div[0].offsetLeft + 1 + 'px'
+  if (div[0].offsetLeft % 300 == 0) {
+    return
+  }
+  setTimeout(r1, 30)
+}
+function g2() {
+  div[1].style.left = div[1].offsetLeft + 1 + 'px'
+  if (div[1].offsetLeft % 300 == 0) {
+    return
+  }
+  setTimeout(g2, 30)
+}
+function b3() {
+  div[2].style.left = div[2].offsetLeft + 1 + 'px'
+  if (div[2].offsetLeft % 300 == 0) {
+    return
+  }
+  setTimeout(b3, 30)
+}
+rgb1()
   .then(() => {
-    if (div[0].offsetLeft % 300 == 0) {
-      console.log('1')
-      clearInterval(r)
-    }
-  })
-
-  .then((data) => {
-    let g = setInterval(() => {
+    setTimeout(() => {
       div[1].style.left = div[1].offsetLeft + 1 + 'px'
-      if (div[1].offsetLeft % 300 == 0) {
-        clearInterval(g)
-        return '成功'
-      }
-    }, 30)
+      g2()
+    }, t + 9000)
   })
   .then(() => {
-    let b = setInterval(() => {
+    setTimeout(() => {
       div[2].style.left = div[2].offsetLeft + 1 + 'px'
-      if (div[2].offsetLeft % 300 == 0) {
-        clearInterval(b)
-        return '成功'
-      }
-    }, 30)
+      b3()
+    }, t + 18000)
   })
-  .then(m)
+  .then(() => {
+    setTimeout(() => {}, t + 27000)
+  })
+setInterval(() => {
+  rgb1()
+    .then(() => {
+      setTimeout(() => {
+        div[1].style.left = div[1].offsetLeft + 1 + 'px'
+        g2()
+      }, t + 9000)
+    })
+    .then(() => {
+      setTimeout(() => {
+        div[2].style.left = div[2].offsetLeft + 1 + 'px'
+        b3()
+      }, t + 18000)
+    })
+    .then(() => {
+      setTimeout(() => {}, t + 27000)
+    })
+}, 27030)
