@@ -1,0 +1,36 @@
+.red{
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  border-radius: 150px;
+}
+.red1{
+  width: 300px;
+  height: 300px;
+  background-color: rgb(106, 2, 2);
+  border-radius: 150px;
+}
+.yellow{
+  width: 300px;
+  height: 300px;
+  background-color: rgb(113, 113, 6);
+  border-radius: 150px;
+}
+.yellow1{
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+  border-radius: 150px;
+}
+.green{
+  width: 300px;
+  height: 300px;
+  background-color: rgb(2, 74, 2);
+  border-radius: 150px;
+}
+.green1{
+  width: 300px;
+  height: 300px;
+  background-color: green;
+  border-radius: 150px;
+}
