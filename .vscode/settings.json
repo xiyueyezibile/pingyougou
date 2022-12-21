@@ -1,8 +1,6 @@
 {
-    "gitlens.proxy": {
-    
-    },
-    // 左侧目录不折叠
+  "gitlens.proxy": {},
+  // 左侧目录不折叠
   "explorer.compactFolders": false,
   // 选择格式化工具
   "[jsonc]": {
@@ -21,5 +19,6 @@
     "printWidth": 500,
     // 使用单引号代替双引号
     "singleQuote": true
-  }
+  },
+  "liveServer.settings.port": 5502
 }

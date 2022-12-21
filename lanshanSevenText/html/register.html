@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>界面</title>
+  <style>
+    
+    .register{
+      display: inline-block;
+      
+    }
+    .login{
+      display: block;
+    }
+    img{
+      width: 30px;
+      height: 30px;
+    }
+    #xianshi{
+      display: none;
+    }
+    .w{
+      width: 900px;
+      text-align: center;
+      background-color: pink;
+      margin: 0 auto;
+    }
+    .words{
+      font-size: 15px;
+      line-height: 50px;
+      padding-left: 10px;
+      text-align: center;
+    }
+    .users{
+      font-size: 5px;
+      background-color: greenyellow;
+    }
+    ul li {
+      margin-top: 5px;
+      display: flex;
+      background-color: aqua;
+      text-align: center;
+    }
+    #user,#username,#sendtext{
+      border-radius: 15px;
+    }
+    #sendtext{
+      width: 500px;
+    }
+    #remove{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="w">
+    
+      <h1>请登录</h1>
+    <div class="login">
+      <form>
+        <input type="text" id="user" placeholder="请输入用户名">
+        <button id="login">登录</button><button id="remove">退出</button>
+      </form>
+    </div>
+
+
+    
+
+
+  <div class="register"><form>
+    <input type="text" id="username" placeholder="请输入用户名">
+    <button id="register">注册</button>
+  </form></div>
+
+
+
+  <div id="xianshi"><ul></ul> 
+    <div>
+      <form>
+    <input type="text" id="sendtext"><button id="send">发送</button>
+  </form>
+</div>
+</div>
+
+ 
+    
+
+  </div>
+  <script>
+    const xianshic = document.querySelector("#xianshi")
+    //显示功能函数
+    function xianshi() {
+      xianshic.style.display = "block"
+       //显示
+       fetch("http://runninglili.club:8080/getAllMessages").then(res => res.json())
+    .then(res => {
+      const ul = document.querySelector("ul")
+      const lis = ul.querySelectorAll("li")
+      for(let i = lis.length - 1;i >= 0;i--) {
+        ul.removeChild(lis[i])
+      }
+      
+      for(let users of res) {
+        
+        const li = document.createElement("li")
+        ul.appendChild(li)
+        li.innerHTML = '<div>' + '<div class="users">' + users.username +'</div>' + '<img src="'+ users.avatar +'" alt="">' +'</div>' + '<div class="words">' + users.words + '</div>'
+      }
+    })
+    }
+    //发送功能函数
+    function sendMes () {
+      const words = document.querySelector("#sendtext").value
+      console.log(words);
+      
+      const token = localStorage.getItem("token")
+      
+      fetch("http://runninglili.club:8080/sendMes",{method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          "Authorization":token
+        },
+        body:JSON.stringify({words})
+      }).then(res => res.json())
+      .then(res => {
+        console.log(res);
+        setTimeout(()=>{
+          history.go(0)
+        },100)
+      })
+    }
+
+
+    const send = document.querySelector("#send")
+send.onclick = (e) => {
+  sendMes()
+  e.preventDefault()
+}
+
+
+    //注册
+    const btn = document.querySelector("#register")
+    btn.onclick = (e) => {
+      const username = document.querySelector("#username").value.trim()
+      console.log(username);
+      fetch("http://runninglili.club:8080/register",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({username})
+      }).then(res => res.json())
+      .then(res =>{
+        if(res.code == "200") {
+          alert(res.mes)
+        }
+        else if(res.code == "403") {
+          alert(res.mes)
+        }
+      })
+      e.preventDefault()
+    }
+
+    const remove = document.querySelector("#remove")
+    
+    const register = document.querySelector(".register")
+
+   
+    //登录功能
+    const login = document.querySelector("#login")
+    const h1 = document.querySelector("h1")
+
+    remove.onclick = (e) => {
+          localStorage.removeItem("token")
+        localStorage.removeItem("currentUser")
+        h1.innerHTML = "请登录"
+        history.go(0)
+      e.preventDefault()
+    }
+    if(localStorage.getItem("token")){
+      
+      register.style.display = "none"
+      remove.style.display = "inline-block"
+      
+      
+      xianshi()
+      
+      login.onclick = (e) => {e.preventDefault()}
+        h1.innerHTML = "欢迎" + localStorage.getItem("currentUser")
+        h1.style.display = "block"
+        
+      }else{
+      
+        
+
+        login.onclick = (e) => {
+      const username = document.querySelector("#user").value
+      fetch("http://runninglili.club:8080/login",{
+        method:"post",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({username})
+      }).then(res => res.json())
+      .then(res => {
+        if(res.code == "403") {
+          alert(res.mes)
+        } else {
+          //存储token
+          localStorage.setItem("token",res.token)
+          localStorage.setItem("currentUser",res.data.username)
+          h1.innerHTML = "欢迎" + localStorage.getItem("currentUser")
+          h1.style.display = "block"
+          register.style.display = "inline-block"
+      remove.style.display = "none"
+      
+          xianshi()
+          history.go(0)
+        }
+      })
+      e.preventDefault()
+    }
+
+      }
+    
+
+
+
+    
+  </script>
+</body>
+</html>
