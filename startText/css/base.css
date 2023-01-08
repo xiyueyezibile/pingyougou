@@ -51,3 +51,9 @@ input:-webkit-autofill {
   /*自动填充背景颜色*/
   -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
 }
+/* 文本域禁止拖拽 */
+textarea {
+  outline: none;
+    overflow: hidden;
+    resize: none;
+}
