@@ -9,6 +9,25 @@ window.addEventListener('hashchange', () => {
   localStorage.setItem('wenzhangID', newpath)
   history.go(0)
 })
+let touxiangs = []
+//获取图片
+async function ariticletouxiang(username) {
+  let url = 'https://gogo.madeindz.work:443/api/user/getuserheadphoto?username=' + username
+  await fetch(url, {
+    method: 'get',
+    headers: {
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res)
+      touxiangs.push(res.message)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
 let sumarticle
 //查询点赞数
 async function searchpraise(ID) {
@@ -133,7 +152,7 @@ window.addEventListener('load', () => {
     },
   })
     .then((res) => res.json())
-    .then((res) => {
+    .then(async (res) => {
       console.log(res)
       if (res.status == '200') {
         ariticleBodyTitle.innerHTML = res.question.title
@@ -164,8 +183,9 @@ window.addEventListener('load', () => {
         } else {
           ariticleBodyFinalFirstLi.innerHTML = res.question.Comments.length + '条评论'
           for (let i = 0; i < res.question.Comments.length; i++) {
+            await ariticletouxiang(res.question.Comments[i].Commenter)
             let li = document.createElement('li')
-            li.innerHTML = '<div><a href="javascript:;">' + res.question.Comments[i].Commenter + '</a></div>' + res.question.Comments[i].message
+            li.innerHTML = '<div><a href="javascript:;"><img src="' + touxiangs[i] + '" >' + res.question.Comments[i].Commenter + '</a></div>' + res.question.Comments[i].message
             ariticleBodyFinalUl.appendChild(li)
           }
         }

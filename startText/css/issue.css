@@ -123,6 +123,7 @@ body {
 .issueBottomLeft {
   border-radius: 4px;
   width: 694px;
+  margin-right: 10px;
 }
 .issueBottomRight {
   width: 296px;

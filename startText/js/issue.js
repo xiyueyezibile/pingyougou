@@ -88,11 +88,12 @@ window.addEventListener('hashchange', () => {
 })
 //存储点赞数数组
 let sumanswer = []
+let touxiangs = []
 //查询点赞数
-async function searchpraise(ID) {
+async function searchpraise(ID, username) {
   let formdata = new FormData()
   formdata.append('id', ID)
-  await fetch('https://gogo.madeindz.work:443/api/seepraiseanswer', {
+  fetch('https://gogo.madeindz.work:443/api/seepraiseanswer', {
     method: 'post',
     body: formdata,
   })
@@ -103,6 +104,17 @@ async function searchpraise(ID) {
     })
     .catch((err) => {
       console.log(err)
+    })
+  let URL = 'https://gogo.madeindz.work:443/api/user/getuserheadphoto?username=' + username
+  await fetch(URL, {
+    method: 'get',
+    headers: {
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      touxiangs.push(res.message)
     })
 }
 //点赞回答
@@ -321,7 +333,8 @@ window.addEventListener('load', () => {
           issueBottomLeftTopLeft.innerHTML = res.question.Answers.length + '个回答'
           issueTopInnerCenter.innerHTML = res.question.title + '<div>' + res.question.message + '</div>'
           for (let i = 0; i < res.question.Answers.length; i++) {
-            await searchpraise(res.question.Answers[i].ID)
+            await searchpraise(res.question.Answers[i].ID, res.question.Answers[i].Answerer)
+            console.log(touxiangs)
             let shoucangflag
             //判断是否收藏
             let URl = 'https://gogo.madeindz.work:443/api/collection/judgeanswerinfavorites?id=' + res.question.Answers[i].ID
@@ -339,66 +352,71 @@ window.addEventListener('load', () => {
                 } else if (res1.status == 500) {
                   shoucangflag = '收藏'
                 }
+                console.log('a', i, touxiangs[i])
                 let li = document.createElement('li')
-                setTimeout(() => {
-                  if (res.question.Answers[i].Comments == null) {
-                    li.innerHTML =
-                      '<div><a href="javascript:;"><strong>' +
-                      res.question.Answers[i].Answerer +
-                      '</strong></a></div>' +
-                      res.question.Answers[i].message +
-                      '<div><button class="zantonganswer" onclick="zantong(' +
-                      res.question.Answers[i].ID +
-                      ',' +
-                      i +
-                      ')">赞同 ' +
-                      sumanswer[i] +
-                      '</button><button class="alreadyzantonganswer" onclick="hatezantong(' +
-                      res.question.Answers[i].ID +
-                      ',' +
-                      i +
-                      ')">已赞同 ' +
-                      sumanswer[i] +
-                      '</button><button onclick="startComments(' +
-                      i +
-                      ')">0条评论</button><a href="javascript:;" class="issueA" onclick="shoucang(' +
-                      res.question.Answers[i].ID +
-                      ',' +
-                      res1.favorites_id +
-                      ')">' +
-                      shoucangflag +
-                      '</a></div>'
-                  } else {
-                    li.innerHTML =
-                      '<div><a href="javascript:;"><strong>' +
-                      res.question.Answers[i].Answerer +
-                      '</strong></a></div>' +
-                      res.question.Answers[i].message +
-                      '<div><button class="zantonganswer" onclick="zantong(' +
-                      res.question.Answers[i].ID +
-                      ',' +
-                      i +
-                      ')">赞同 ' +
-                      sumanswer[i] +
-                      '</button><button class="alreadyzantonganswer" onclick="hatezantong(' +
-                      res.question.Answers[i].ID +
-                      ',' +
-                      i +
-                      ')">已赞同 ' +
-                      sumanswer[i] +
-                      '</button><button onclick="startComments(' +
-                      i +
-                      ')">' +
-                      res.question.Answers[i].Comments.length +
-                      '条评论</button><a href="javascript:;" class="issueA" onclick="shoucang(' +
-                      res.question.Answers[i].ID +
-                      ',' +
-                      res1.favorites_id +
-                      ')">' +
-                      shoucangflag +
-                      '</a></div>'
-                  }
-                }, 100)
+                // setTimeout(() => {
+                if (res.question.Answers[i].Comments == null) {
+                  li.innerHTML =
+                    '<div><a href="javascript:;"><img src="' +
+                    touxiangs[i] +
+                    '" ><strong>' +
+                    res.question.Answers[i].Answerer +
+                    '</strong></a></div>' +
+                    res.question.Answers[i].message +
+                    '<div><button class="zantonganswer" onclick="zantong(' +
+                    res.question.Answers[i].ID +
+                    ',' +
+                    i +
+                    ')">赞同 ' +
+                    sumanswer[i] +
+                    '</button><button class="alreadyzantonganswer" onclick="hatezantong(' +
+                    res.question.Answers[i].ID +
+                    ',' +
+                    i +
+                    ')">已赞同 ' +
+                    sumanswer[i] +
+                    '</button><button onclick="startComments(' +
+                    i +
+                    ')">0条评论</button><a href="javascript:;" class="issueA" onclick="shoucang(' +
+                    res.question.Answers[i].ID +
+                    ',' +
+                    res1.favorites_id +
+                    ')">' +
+                    shoucangflag +
+                    '</a></div>'
+                } else {
+                  li.innerHTML =
+                    '<div><a href="javascript:;"><img src="' +
+                    touxiangs[i] +
+                    '" ><strong>' +
+                    res.question.Answers[i].Answerer +
+                    '</strong></a></div>' +
+                    res.question.Answers[i].message +
+                    '<div><button class="zantonganswer" onclick="zantong(' +
+                    res.question.Answers[i].ID +
+                    ',' +
+                    i +
+                    ')">赞同 ' +
+                    sumanswer[i] +
+                    '</button><button class="alreadyzantonganswer" onclick="hatezantong(' +
+                    res.question.Answers[i].ID +
+                    ',' +
+                    i +
+                    ')">已赞同 ' +
+                    sumanswer[i] +
+                    '</button><button onclick="startComments(' +
+                    i +
+                    ')">' +
+                    res.question.Answers[i].Comments.length +
+                    '条评论</button><a href="javascript:;" class="issueA" onclick="shoucang(' +
+                    res.question.Answers[i].ID +
+                    ',' +
+                    res1.favorites_id +
+                    ')">' +
+                    shoucangflag +
+                    '</a></div>'
+                }
+                // }, 100)
                 issueBottomLeftBottomUl.appendChild(li)
                 setTimeout(() => {
                   checkdianzan(res.question.Answers[i].ID, i)
