@@ -14,6 +14,7 @@ input {
   position: relative;
 }
 .myResourceBodyTop div {
+  cursor: pointer;
   width: 168px;
   height: 168px;
   position: absolute;
@@ -22,6 +23,18 @@ input {
   left: 30px;
   border: 3px solid #fff;
   border-radius: 6px;
+}
+.myResourceBodyTop div:nth-child(1) {
+  z-index: 3;
+  border: 0;
+  color: #f6f6f6;
+  top: 202px;
+  left: 32px;
+  line-height: 168px;
+  text-align: center;
+  background-color: #121212;
+  opacity: 0.5;
+  display: none;
 }
 .myResourceBodyTop div img {
   width: 168px;
@@ -217,4 +230,7 @@ h3 {
 }
 #myResourceGetcode:hover {
   background-color: #0461cf;
+}
+#myResourceimg {
+  display: none;
 }

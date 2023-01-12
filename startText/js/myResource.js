@@ -14,6 +14,9 @@ fetch('https://gogo.madeindz.work:443/api/user/getuserinformation', {
       localStorage.removeItem('username')
       window.location.href = 'https://zhihu.madeindz.work'
     }
+    if (res.information.headphoto != '') {
+      myResourceBodyTopdivimg.src = res.information.headphoto
+    }
     if (res.information.gender == '男') {
       myResourceGender.innerHTML = '男'
       myResourceGendermale.checked = true
@@ -23,6 +26,12 @@ fetch('https://gogo.madeindz.work:443/api/user/getuserinformation', {
     }
     myResourcejianjie.innerHTML = res.information.sign
   })
+//获取头像区域
+const myResourceBodyTop = document.querySelector('.myResourceBodyTop')
+const myResourceBodyTopdivs = myResourceBodyTop.querySelectorAll('div')
+const myResourceBodyTopdivimg = myResourceBodyTopdivs[1].querySelector('img')
+//获取文件输入
+const myResourceimg = document.querySelector('#myResourceimg')
 //获取要加载的样式
 const myResourceUsername = document.querySelector('.myResourceUsername')
 const myResourceGender = document.querySelector('.myResourceGender')
@@ -209,4 +218,62 @@ myResourceGetcode.addEventListener('click', (e) => {
     .catch((err) => {
       throw new Error(err)
     })
+})
+let myResourceBodyTopdivsflag = 1
+myResourceBodyTopdivimg.addEventListener('mouseover', () => {
+  if (myResourceBodyTopdivsflag) {
+    myResourceBodyTopdivsflag = 0
+    myResourceBodyTopdivs[0].style.display = 'block'
+  }
+})
+myResourceBodyTopdivs[0].addEventListener('mouseout', () => {
+  if (!myResourceBodyTopdivsflag) {
+    myResourceBodyTopdivsflag = 1
+    myResourceBodyTopdivs[0].style.display = 'none'
+  }
+})
+//更改图片信息
+myResourceBodyTopdivimg.addEventListener('click', () => {
+  myResourceimg.click()
+})
+myResourceimg.addEventListener('change', () => {
+  //获取文件对象
+  let file = myResourceimg.files[0]
+  if (!file) return
+  console.log(file.type)
+  //限制文件上传
+  if (!/webp|png|jpg|jpeg/i.test(file.type)) {
+    alert('上传的文件只能是webp或png或jpg或jpeg格式的')
+    return
+  }
+  //限制文件上传大小
+  if (file.size > 2 * 1024 * 1024) {
+    alert('上传的文件不能超过两兆')
+    return
+  }
+  let fileReader = new FileReader()
+  fileReader.readAsDataURL(file)
+  fileReader.onload = (ev) => {
+    let formdata = new FormData()
+    console.log(ev.target.result)
+    formdata.append('headphoto', ev.target.result)
+    console.log(ev.target.result)
+    fetch('https://gogo.madeindz.work:443/api/user/informationmodify', {
+      method: 'put',
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      },
+      body: formdata,
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res)
+        if (res.status == 200) {
+          history.go(0)
+        }
+      })
+      .catch((err) => {
+        throw new Error()
+      })
+  }
 })

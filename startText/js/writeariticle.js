@@ -15,7 +15,7 @@ writeariticlebianjiqiTopbtns[8].addEventListener('click', () => {
     let formdata = new FormData()
     formdata.append('title', writeariticlebianjiqiCenter.value)
     formdata.append('message', writeariticlebianjiqiBottom.innerHTML)
-    fetch('https://gogo.madeindz.work:443/api/artical/createartical', {
+    fetch('https://gogo.madeindz.work:443/api/article/createarticle', {
       method: 'post',
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token'),

@@ -1,11 +1,3 @@
-div
-{
-    display: flex;
-    align-items: center;
-    background-color: pink;
-}
-
-div::before
-{
-    content: url(icon.svg);
+span {
+  color: red;
 }

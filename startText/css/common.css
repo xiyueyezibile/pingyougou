@@ -3,11 +3,12 @@ body {
 }
 /* 头部导航栏模块 */
 .head {
+  overflow: hidden;
   background-color: #ffffff;
   top: 0;
+  position: relative;
   position: fixed;
   width: 100%;
-    /* padding-left: 16px; */
     padding-right: 55px;
   height: 52px;
   border-bottom: 1px solid rgb(231, 231, 231);
@@ -16,9 +17,10 @@ body {
 }
 .headerinner {
   position: relative;
-  margin: 0 auto;
+  position: absolute;
   display: flex;
   width: 1300px;
+  left: calc(50vw - 650px);
   padding-left: 100px;
   padding-right: 55px;
 }
@@ -276,4 +278,116 @@ textarea {
 }
 #sendIssue:hover {
   background-color: #045fcb;
+}
+.returnTop {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  right: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
+}
+.returnTop:hover {
+  background-color: #d3d3d3;
+}
+.headerinnerBottom {
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 1300px;
+  height: 52px;
+  background-color: #ffffff;
+  position: relative;
+  position: absolute;
+  top: 52px;
+  left: calc(50vw - 650px);
+  display: flex;
+  display: none;
+  justify-content: space-between;
+}
+.headerinnerBottom > div {
+  display: flex;
+}
+.headerinnerBottom > div:nth-child(1) {
+  padding-top: 10px;
+}
+.headerinnerBottom ul {
+  display: flex;
+}
+.headerinnerBottom ul li {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+#headBottomsearch {
+  width: 243px;
+  margin-top: 4px;
+  margin-left: 14px;
+  height: 24px;
+  color: rgb(133, 144, 184);
+  line-height: 24px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  overflow: hidden;
+  background-color: rgb(246, 246, 246);
+  padding: 0;
+}
+.headBottomtiwen {
+  width: 70px;
+  height: 34px;
+  margin-left: 12px;
+  margin-top: 10px;
+  border-radius: 999px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(16, 117, 233);
+  font-size: 16px;
+}
+.searchul {
+  position: absolute;
+  display: none;
+  width: 410px;
+  height: 50px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 1px 3px hsl(0deg 0% 7% / 10%);
+  z-index: 13;
+  top: 60px;
+  background-color: #ffffff;
+}
+.searchul ul {
+  display: flex;
+  border-bottom: 1px solid #ebebeb;
+  flex-wrap: wrap;
+}
+.searchul ul li {
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  width: 80px;
+  height: 25px;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.searchul ul li a {
+  width: 100%;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.searchul ol li {
+  padding-left: 20px;
+  height: 50px;
+}
+.searchul ol a {
+  line-height: 50px;
+}
+.searchul > div {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 600;
+  padding-left: 20px;
+  border-bottom: 1px solid #ebebeb;
 }

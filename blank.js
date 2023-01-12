@@ -1,12 +1,16 @@
-let arr = prompt().split(',')
-function cutRepeat(arr, long) {
-  let copy = []
+const ul = document.querySelector('ul')
+const li = ul.querySelectorAll('li')
+const btn = document.querySelector('button')
+let m = []
+for (let i = 0; i < li.length - 1; i++) {
+  m.push(li[i].querySelector('a'))
+  li[i].querySelector('a').addEventListener('click', () => {
+    window.location.hash = '#' + i
 
-  for (let i = 0; i < long; i++) {
-    if (copy.indexOf(arr[i]) === -1) {
-      copy.push(arr[i])
-    }
-  }
-  return copy
+    console.log('11')
+  })
 }
-console.log(cutRepeat(arr, arr.length))
+window.addEventListener('hashchange', () => {
+  console.log(window.location.hash)
+  li[3].innerHTML = 1
+})

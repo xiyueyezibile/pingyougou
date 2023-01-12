@@ -4,40 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>问题 - 知乎</title>
+  <title>搜索 - 知乎</title>
   <link rel="shortcut icon" href="../img/zhihu.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/issue.css">
+  <link rel="stylesheet" href="../css/search.css">
 </head>
 <body>
-  <!-- 评论界面模块 -->
-  <div class="issueblack"></div>
-  <div class="issueblackComments">
-    <button class="issueblackCancel">
-      <svg width="24" height="24" viewBox="0 0 24 24" class="Zi Zi--Close css-1acz8qk" fill="#ffffff"><path fill-rule="evenodd" d="M18.22 19.28a.75.75 0 1 0 1.06-1.06L13.06 12l6.22-6.22a.75.75 0 0 0-1.06-1.06L12 10.94 5.78 4.72a.75.75 0 0 0-1.06 1.06L10.94 12l-6.22 6.22a.75.75 0 1 0 1.06 1.06L12 13.06l6.22 6.22Z" clip-rule="evenodd"></path></svg>
-    </button>
-    <div class="issueblackComment"><ul></ul></div>
-    <div class="issueblackMyComment">
-      <form>
-        <textarea name="" id="issueblackMyComment" cols="30" rows="2" placeholder="评论千万条，友善第一条"></textarea>
-        <button id="issueblackMySend">发布</button>
-      </form>
-    </div>
-  </div>
-  <!-- 收藏界面模块 -->
-  <div class="issueshoucang">
-    <button class="issueshoucangreturn">
-      <svg width="24" height="24" viewBox="0 0 24 24" class="Zi Zi--Close Modal-closeIcon" fill="#d7d7d7"><path fill-rule="evenodd" d="M18.22 19.28a.75.75 0 1 0 1.06-1.06L13.06 12l6.22-6.22a.75.75 0 0 0-1.06-1.06L12 10.94 5.78 4.72a.75.75 0 0 0-1.06 1.06L10.94 12l-6.22 6.22a.75.75 0 1 0 1.06 1.06L12 13.06l6.22 6.22Z" clip-rule="evenodd"></path></svg>
-    </button>
-    <div class="issueshoucangTop">
-      <div>添加收藏</div>
-      <div>请选择你想要添加的收藏夹</div>
-    </div>
-    <ul class="issueshoucangUL"></ul>
-  </div>
-   <!-- 头部导航栏模块 -->
-   <div class="head">
+  <!-- 头部导航栏模块 -->
+  <div class="head">
     <div class="searchul">
       <div>搜索历史</div>
       <ul></ul>
@@ -152,117 +127,80 @@
       </div>
     </div>
   </div>
-  <div class="issueTop">
-    <div class="issueTopInner">
-      <div class="issueTopInnerTop">
-        <div class="issueguanzhu">
-          <div>
-            <a href="javascript:;">
-            <div>关注者</div>
-            0
-            </a>
-          </div>
-          <div>
-            <div>被浏览</div>
-            0
-          </div>
-        </div>
-      </div>
-      <div class="issueTopInnerCenter"></div>
-      <div class="issueTopInnerBottom">
-        <button>关注问题</button>
-        <button>写回答</button>
-        <button>邀请回答</button>
-      </div>
-    </div>
-  </div>
-  <div class="bianjiqi">
-    <form>
-      <!-- <input type="hidden" id="bianjiqiSubmit"> -->
-    </form>
-    <div class="bianjiqiTop">
-      <button>加粗</button><button>斜体</button><button>下划线</button><button>左对齐</button><button>文字居中</button><button>右对齐</button><button>有序列表</button><button>无序列表</button><button>发表回答</button>
-    </div>
-    <div class="bianjiqiBottom" contenteditable="true"></div>
-  </div>
-  <div class="issueBottom">
-    <div class="issueBottomLeft">
-      <div class="issueBottomLeftTop">
-        <div class="issueBottomLeftTopLeft">0个回答</div>
-        <div class="issueBottomLeftTopRight">默认排序</div>
-      </div>
-      <div class="issueBottomLeftBottom">
+  <div class="searchBody">
+    <div class="searchLeft">
+      <div class="searchLeftTop">搜索内容</div>
+      <div class="searchLeftBottom">
         <ul></ul>
       </div>
     </div>
-    <div class="issueBottomRight">
-      <div class="issueBottomRightTop">
-        <div>相关问题</div>
+    <div class="searchRight">
+      <div class="searchRightTop">
+        <div>搜索发现</div>
         <div></div>
       </div>
-     <!-- 尾部模块 -->
-     <footer>
-      <a href="javascript:;">谭博文</a>
-      <a href="javascript:;">知乎指南</a>
-      <a href="javascript:;">知乎协议</a>
-      <a href="javascript:;">知乎隐私保护指引</a>
-      <br>
-      <a href="javascript:;">应用</a>
-      <a href="javascript:;">工作</a>
-      <a href="javascript:;">申请开通知乎机构号</a>
-      <br>
-      <a href="javascript:;">侵权举报</a>
-      <a href="javascript:;">网上有害信息举报专区</a>
-      <br>
-      <a href="javascript:;">京 xxx 证 xxxxxx 号</a>
-      <br>
-      <a href="javascript:;">京 xxx 备 xxxxxx 号 - 1</a>
-      <br>
-      <a href="javascript:;">京xxx 备 xxxxxxxxxxx 号</a>
-      <br>
-      <a href="javascript:;">京xx[2022]xxxx-xxx 号</a>
-      <br>
-      <a href="javascript:;">xxxxxxxxxxxx备案</a>
-      <br>
-      <a href="javascript:;">（京）xxx信息备字（2022）第xxxxx号</a>
-      <br>
-      <span>服务热线：xxx-xxx-xxxx</span>
-      <br>
-      <span>违法和不良信息举报：xxx-xxxxxxxx</span>
-      <br>
-      <a href="javascript:;">举报邮箱：lanshan@qq.com</a>
-      <br>
-      <a href="javascript:;">儿童色情信息举报专区</a>
-      <br>
-      <a href="javascript:;">互联网算法推荐举报专区</a>
-      <br>
-      <a href="javascript:;">养老诈骗举报专区</a>
-      <br>
-      <a href="javascript:;">MCN 举报专区</a>
-      <br>
-      <a href="javascript:;">信息安全漏洞反馈专区</a>
-      <br>
-      <a href="javascript:;">内容从业人员违法违规行为举报</a>
-      <br>
-      <a href="javascript:;">网络谣言信息举报入口</a>
-      <br>
-      <a href="javascript:;">证照中心</a>
-      <a href="javascript:;">Investor Relations</a>
-      <br>
-      <a href="javascript:;">联系我们</a>
-      <span> © 2023 知乎</span>
-      <br>
-      <span>xxx有限公司版权所有</span>
-      <br>
-      <img src="https://pica.zhimg.com/80/v2-ccdb7828c12afff31a27e51593d23260_720w.png" alt="本站提供适老化无障碍服务" width="80" height="38">
-      <button class="returnTop">
-        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="Zi Zi--BackToTop" fill="#8590a6"><path fill-rule="evenodd" d="M13.204 3.107a1.75 1.75 0 0 0-2.408 0L3.806 9.73c-1.148 1.088-.378 3.02 1.204 3.02h2.24V20c0 .966.784 1.75 1.75 1.75h6A1.75 1.75 0 0 0 16.75 20v-7.25h2.24c1.582 0 2.353-1.932 1.204-3.02l-6.99-6.623Z" clip-rule="evenodd"></path></svg>
-      </button>
-    </footer>
+      <!-- 尾部模块 -->
+      <footer>
+        <a href="javascript:;">谭博文</a>
+        <a href="javascript:;">知乎指南</a>
+        <a href="javascript:;">知乎协议</a>
+        <a href="javascript:;">知乎隐私保护指引</a>
+        <br>
+        <a href="javascript:;">应用</a>
+        <a href="javascript:;">工作</a>
+        <a href="javascript:;">申请开通知乎机构号</a>
+        <br>
+        <a href="javascript:;">侵权举报</a>
+        <a href="javascript:;">网上有害信息举报专区</a>
+        <br>
+        <a href="javascript:;">京 xxx 证 xxxxxx 号</a>
+        <br>
+        <a href="javascript:;">京 xxx 备 xxxxxx 号 - 1</a>
+        <br>
+        <a href="javascript:;">京xxx 备 xxxxxxxxxxx 号</a>
+        <br>
+        <a href="javascript:;">京xx[2022]xxxx-xxx 号</a>
+        <br>
+        <a href="javascript:;">xxxxxxxxxxxx备案</a>
+        <br>
+        <a href="javascript:;">（京）xxx信息备字（2022）第xxxxx号</a>
+        <br>
+        <span>服务热线：xxx-xxx-xxxx</span>
+        <br>
+        <span>违法和不良信息举报：xxx-xxxxxxxx</span>
+        <br>
+        <a href="javascript:;">举报邮箱：lanshan@qq.com</a>
+        <br>
+        <a href="javascript:;">儿童色情信息举报专区</a>
+        <br>
+        <a href="javascript:;">互联网算法推荐举报专区</a>
+        <br>
+        <a href="javascript:;">养老诈骗举报专区</a>
+        <br>
+        <a href="javascript:;">MCN 举报专区</a>
+        <br>
+        <a href="javascript:;">信息安全漏洞反馈专区</a>
+        <br>
+        <a href="javascript:;">内容从业人员违法违规行为举报</a>
+        <br>
+        <a href="javascript:;">网络谣言信息举报入口</a>
+        <br>
+        <a href="javascript:;">证照中心</a>
+        <a href="javascript:;">Investor Relations</a>
+        <br>
+        <a href="javascript:;">联系我们</a>
+        <span> © 2023 知乎</span>
+        <br>
+        <span>xxx有限公司版权所有</span>
+        <br>
+        <img src="https://pica.zhimg.com/80/v2-ccdb7828c12afff31a27e51593d23260_720w.png" alt="本站提供适老化无障碍服务" width="80" height="38">
+        <button class="returnTop">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="Zi Zi--BackToTop" fill="#8590a6"><path fill-rule="evenodd" d="M13.204 3.107a1.75 1.75 0 0 0-2.408 0L3.806 9.73c-1.148 1.088-.378 3.02 1.204 3.02h2.24V20c0 .966.784 1.75 1.75 1.75h6A1.75 1.75 0 0 0 16.75 20v-7.25h2.24c1.582 0 2.353-1.932 1.204-3.02l-6.99-6.623Z" clip-rule="evenodd"></path></svg>
+        </button>
+      </footer>
     </div>
   </div>
-  <script src="../js/bianjiqi.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/common.js"></script>
-  <script src="../js/issue.js"></script>
 </body>
 </html>

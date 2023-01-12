@@ -50,10 +50,30 @@
   color: #121212;
   width: 100%;
   height: 100px;
-  line-height: 100px;
+  line-height: 60px;
 }
 .indexLeftBodyBottom ul li a:hover {
   color: #175199;
+}
+.indexLeftBodyBottom ul li div button {
+  width: 80px;
+  margin-top: 5px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+.zantong {
+  background-color: #e6f0fd;
+  color: #056de8;
+}
+.zantong:hover {
+  background-color:#dae9fc;
+}
+.alreadyzantong {
+  background-color: #175199;
+  color: #ffffff;
+  display: none;
 }
 /* 右侧身体部分 */
 .indexRightBody {
