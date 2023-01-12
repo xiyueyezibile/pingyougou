@@ -7,7 +7,6 @@ fetch('https://gogo.madeindz.work:443/api/user/getuserinformation', {
 })
   .then((res) => res.json())
   .then((res) => {
-    console.log(res)
     if (res.code == '2005') {
       alert('登录过期')
       localStorage.removeItem('token')
@@ -93,7 +92,7 @@ myResourceProtects[0].addEventListener('click', (e) => {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 })
 //第二个表单逻辑
@@ -126,7 +125,7 @@ myResourceProtects[1].addEventListener('click', (e) => {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 })
 //第三个表单逻辑
@@ -153,7 +152,7 @@ myResourceProtects[2].addEventListener('click', (e) => {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 })
 // 第四个表单逻辑
@@ -216,7 +215,7 @@ myResourceGetcode.addEventListener('click', (e) => {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 })
 let myResourceBodyTopdivsflag = 1
@@ -267,13 +266,12 @@ myResourceimg.addEventListener('change', () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res)
         if (res.status == 200) {
           history.go(0)
         }
       })
       .catch((err) => {
-        throw new Error()
+        console.log(err)
       })
   }
 })

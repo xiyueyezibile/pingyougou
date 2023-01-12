@@ -30,7 +30,7 @@ writeariticlebianjiqiTopbtns[8].addEventListener('click', () => {
         }
       })
       .catch((err) => {
-        throw new Error(err)
+        console.log(err)
       })
   }
 })

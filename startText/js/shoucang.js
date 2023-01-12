@@ -93,7 +93,7 @@ window.addEventListener('load', () => {
                   shoucangBodyLeftBottomBottomUl.appendChild(li)
                 })
                 .catch((err) => {
-                  throw new Error(err)
+                  console.log(err)
                 })
             } else {
               let URL = 'https://gogo.madeindz.work:443/api/article/seearticleinformation?id=' + res.collections[i].article_id + '&secret=123456'
@@ -110,7 +110,7 @@ window.addEventListener('load', () => {
                   shoucangBodyLeftBottomBottomUl.appendChild(li)
                 })
                 .catch((err) => {
-                  throw new Error(err)
+                  console.log(err)
                 })
             }
           }

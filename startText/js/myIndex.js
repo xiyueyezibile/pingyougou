@@ -111,13 +111,12 @@ hiddenshoucangFormbtns[1].addEventListener('click', (e) => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res)
         if (res.status == 200) {
           history.go(0)
         }
       })
       .catch((err) => {
-        throw new Error(err)
+        console.log(err)
       })
   }
 })
@@ -137,7 +136,6 @@ window.addEventListener('load', () => {
         localStorage.removeItem('username')
         window.location.href = 'https://zhihu.madeindz.work'
       }
-      console.log(res)
       if (res.information.headphoto != '') {
         myIndexImg.src = res.information.headphoto
       }
@@ -158,7 +156,7 @@ window.addEventListener('load', () => {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
   //渲染提问页面
   fetch('https://gogo.madeindz.work:443/api/qa/qsubmited', {
@@ -179,7 +177,7 @@ window.addEventListener('load', () => {
       myIndexBottomLeftTopLi[3].innerHTML = '提问 ' + res.message.length
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
   //渲染文章页面
   fetch('https://gogo.madeindz.work:443/api/article/articlesubmited', {
@@ -195,7 +193,7 @@ window.addEventListener('load', () => {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
   //渲染收藏页面
   fetch('https://gogo.madeindz.work:443/api/collection/seemyfavorites', {
@@ -215,7 +213,7 @@ window.addEventListener('load', () => {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 })
 let myIndexBottomLefttiwenflag = 1
@@ -283,7 +281,7 @@ for (let i = 0; i < myIndexBottomLeftTopLi.length; i++) {
           }
         })
         .catch((err) => {
-          throw new Error(err)
+          console.log(err)
         })
     } else if (i == 4) {
       myIndexBottomLeftwenzhang.style.display = 'block'
@@ -319,7 +317,7 @@ for (let i = 0; i < myIndexBottomLeftTopLi.length; i++) {
           }
         })
         .catch((err) => {
-          throw new Error(err)
+          console.log(err)
         })
     } else if (i == 5) {
       myIndexBottomLeftzhuanlan.style.display = 'block'
@@ -359,7 +357,7 @@ for (let i = 0; i < myIndexBottomLeftTopLi.length; i++) {
           }
         })
         .catch((err) => {
-          throw new Error(err)
+          console.log(err)
         })
     } else if (i == 8) {
       myIndexBottomLeftguanzhu.style.display = 'block'

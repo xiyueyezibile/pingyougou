@@ -39,7 +39,6 @@ async function searchpraise(ID) {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log(res)
       sumarticle = res.PraiseSum
     })
     .catch((err) => {
@@ -61,7 +60,6 @@ function zantongarticle(ID) {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log(res)
       if (res.status == 200) {
         zantong.style.display = 'none'
         alreadyzantong.style.display = 'inline-block'
@@ -77,7 +75,6 @@ function zantongarticle(ID) {
 function hatezantong(ID) {
   let formdata = new FormData()
   formdata.append('id', ID)
-  console.log(ID)
   const zantong = document.querySelector('.zantong')
   const alreadyzantong = document.querySelector('.alreadyzantong')
   fetch('https://gogo.madeindz.work:443/api/praise/cancelpraisearticle', {
@@ -89,7 +86,6 @@ function hatezantong(ID) {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log(res)
       if (res.status == 200) {
         zantong.style.display = 'inline-block'
         alreadyzantong.style.display = 'none'
@@ -114,7 +110,6 @@ function checkdianzan(ID) {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log(res)
       if (res.status == 200) {
         zantong.style.display = 'none'
         alreadyzantong.style.display = 'inline-block'
@@ -153,7 +148,6 @@ window.addEventListener('load', () => {
   })
     .then((res) => res.json())
     .then(async (res) => {
-      console.log(res)
       if (res.status == '200') {
         ariticleBodyTitle.innerHTML = res.question.title
         ariticleBodyCenter.innerHTML = '<a href="javascript:;">' + res.question.Articler + '</a>'
@@ -192,7 +186,7 @@ window.addEventListener('load', () => {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
   //发表评论
   ariticleBodyBottombtn.addEventListener('click', () => {
@@ -214,7 +208,7 @@ window.addEventListener('load', () => {
           history.go(0)
         })
         .catch((err) => {
-          throw new Error(err)
+          console.log(err)
         })
     }
   })
@@ -236,6 +230,9 @@ window.addEventListener('load', () => {
       if (res.information.headphoto != '') {
         ariticleimg.src = res.information.headphoto
       }
+    })
+    .catch((err) => {
+      console.log(err)
     })
 })
 
@@ -271,7 +268,7 @@ function openshoucang(ID, ...fv) {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 }
 //退出收藏界面
@@ -297,7 +294,7 @@ function startshoucang(sID, aID) {
       history.go(0)
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 }
 //结束收藏函数
@@ -314,10 +311,9 @@ function endshoucang(sID, aID) {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log(res)
       history.go(0)
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 }

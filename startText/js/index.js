@@ -177,8 +177,8 @@ duanxin.addEventListener('click', () => {
             console.log(res)
           }
         })
-        .catch((res) => {
-          throw new Error('出错了')
+        .catch((err) => {
+          console.log(err)
         })
     }
     //在注册界面
@@ -261,11 +261,10 @@ registerbtn.addEventListener('click', (e) => {
             falseyanzhengma.style.display = 'none'
           })
         }
-        console.log(res.message)
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 })
 
@@ -300,7 +299,7 @@ if (localStorage.getItem('token')) {
         }
       })
       .catch((err) => {
-        throw new Error(err)
+        console.log(err)
       })
   })
 
@@ -344,7 +343,7 @@ if (localStorage.getItem('token')) {
           }
         })
         .catch((err) => {
-          throw new Error(err)
+          console.log(err)
         })
       //手机号
     } else {
@@ -377,7 +376,7 @@ if (localStorage.getItem('token')) {
           }
         })
         .catch((err) => {
-          throw new Error(err)
+          console.log(err)
         })
     }
   })

@@ -165,7 +165,7 @@ sendIssue.addEventListener('click', () => {
         }
       })
       .catch((err) => {
-        throw new Error(err)
+        console.log(err)
       })
   } else {
     alert('问题还没有带问号')
@@ -277,7 +277,7 @@ search.addEventListener('focus', () => {
           }
         })
         .catch((err) => {
-          throw new Error(err)
+          console.log(err)
         })
     } else {
       const searchOlLi = searchOl.querySelectorAll('li')
@@ -298,8 +298,6 @@ searchbtn.addEventListener('click', () => {
 search.addEventListener('blur', (e) => {
   setTimeout(() => {
     searchul.style.display = 'none'
-    // headerinnerBottom.style.display = 'flex'
-    // head.style.overflow = 'hidden'
     clearInterval(searchset)
   }, 500)
 })

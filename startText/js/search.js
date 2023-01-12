@@ -67,7 +67,7 @@ window.addEventListener('load', () => {
       }
     })
     .catch((err) => {
-      throw new Error(err)
+      console.log(err)
     })
 })
 //固定滚动
